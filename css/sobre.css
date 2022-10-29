@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --azul: #3065ac;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #000;
+    color: #fff;
+    padding: 1.5rem 4rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.btn:hover {
+    background: var(--azul);
+    transform: scale(1.1);
+}
+
+/* Menu */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+header .logo {
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+}
+
+header .menu a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #333;
+}
+
+header .menu a:hover {
+    color: var(--azul);
+}
+
+header .icones a {
+    font-size: 2.5rem;
+    color: #333;
+    margin-left: 1.5rem;
+}
+
+header .icones a:hover {
+    color: var(--azul);
+}
+
+header #toggler {
+    display: none;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    display: none;
+}
+
+/* Sobre Nós */
+
+.sobre .box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.sobre .box .imagem {
+    flex: 1 1 45rem;
+}
+
+.sobre .box .imagem img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.sobre .box .conteudo {
+    flex: 1 1 45rem;
+}
+
+.sobre .box .conteudo p {
+    font-size: 2.5rem;
+    padding: .5rem 0;
+    line-height: 2;
+    text-transform: none;
+}
+
+.titulo-sobre {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 9rem;
+}
+
+.pergunta {
+    text-align: center;
+    color: var(--azul);
+    font-size: 4rem;
+    padding-bottom: 2.2rem;
+    text-transform: uppercase;
+}
+
+/* Rodapé */
+.rodape {
+    border-top: 1px solid rgba(0, 0, 0, .3);
+}
+
+.rodape .conteudo-rodape {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.rodape .conteudo-rodape .box h3 {
+    padding: 1rem 0;
+    font-size: 2.8rem;
+    color: #000;
+}
+
+.rodape .conteudo-rodape .box a {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: #000;
+    text-transform: none;
+}
+
+.rodape .conteudo-rodape .box a:hover {
+    color: var(--azul);
+}
+
+.rodape .creditos {
+    text-align: center;
+    border-top: .1rem solid rgba(0, 0, 0, .5);
+    font-size: 2rem;
+    color: var(--azul);
+    padding: .5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+
+/* Media Queries */
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    header .fa-bars {
+        display: block;
+    }
+
+    header .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: .1rem solid #333;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked~.menu {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .menu a {
+        margin: 0.8rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid #333;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+}
