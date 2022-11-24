@@ -1,0 +1,1 @@
+// Efeito máquina de escrever
